@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MisMascotas</string>
+    <string name="nombre">Catty</string>
+    <string name="pnombre">Pet</string>
+    <string name="search">Buscar</string>
+    <string name="settings">Settings</string>
 </resources>

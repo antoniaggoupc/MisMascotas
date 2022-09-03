@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16sp</dimen>
+    <dimen name="activity_vertical_margin">16sp</dimen>
+    <dimen name="nombre_mascota">33sp</dimen>
+    <dimen name="tex_size">20sp</dimen>
+    <dimen name="top">20sp</dimen>
+    <dimen name="left">10sp</dimen>
+    <dimen name="corner_radius_textinputlayout_cardview">20sp</dimen>
+    <dimen name="corner_radius_cardview">4sp</dimen>
+    <dimen name="nombre_pet_cardview">20sp</dimen>
+    <dimen name="pet_iv_size">40sp</dimen>
+
+    <dimen name="margen_arriba_layout">5sp</dimen>
+    <dimen name="corner_radius">20dp</dimen>
+
+    <dimen name="elevation_action_bar">4sp</dimen>
+</resources>

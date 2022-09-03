@@ -18,7 +18,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     Activity activity;
 
     // Construye nuestra lista de contactos
-    public MascotaAdaptador(ArrayList<Mascota> contactos, Activity activity) {
+    public MascotaAdaptador(ArrayList<Mascota> mascotas, Activity activity) {
         this.mascotas = mascotas;
         this.activity = activity;
     }
@@ -31,29 +31,29 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         return new MascotaViewHolder(v);
     }
     @Override
-    public void onBindViewHolder(@NonNull MascotaAdaptador.MascotaViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MascotaViewHolder mascotaViewHolder, int position) {
         // Obtiene el objeto en el que está iterando
-        Mascota contacto = mascotas.get(position);
+        Mascota mascota = mascotas.get(position);
         // Setea la información
-        MascotaViewHolder.img_foto_CV.setImageResource(contacto.getFoto());
-        MascotaViewHolder.tv_nombre_CV.setText(contacto.getNombre());
-        MascotaViewHolder.tv_telefono_CV.setText(contacto.getTelefono());
+        mascotaViewHolder.img_foto_CV.setImageResource(mascota.getFoto());
+        mascotaViewHolder.pet_nombre_CV.setText(mascota.getNombre());
+        mascotaViewHolder.number_like_bone_CV.setText(mascota.getNumber_like_bone());
 
-        contactoViewHolder.img_foto_CV.setOnClickListener(new View.OnClickListener() {
+        mascotaViewHolder.img_foto_CV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, contacto.getNombre(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, mascota.getNombre(), Toast.LENGTH_SHORT).show();
                 //
-                // Para cambiar de pantalla de MainActivity a DetalleContacto
+                // Para cambiar de pantalla de MainActivity a DetalleMascota
                 // al pulsar sobre un ítem de MainActivity
                 //
-                Intent intent = new Intent(activity, DetalleContacto.class);
+                Intent intent = new Intent(activity, DetalleMascota.class);
                 //
-                // Para enviar los datos de cada contacto a la Activity DetalleContacto
+                // Para enviar los datos de cada mascota a la Activity DetalleMascota
                 //
-                intent.putExtra(activity.getResources().getString(R.string.pnombre), contacto.getNombre());
-                intent.putExtra(activity.getResources().getString(R.string.ptelefono), contacto.getTelefono());
-                intent.putExtra(activity.getResources().getString(R.string.pemail), contacto.getEmail());
+                intent.putExtra(activity.getResources().getString(R.string.pfoto), mascota.getFoto());
+                intent.putExtra(activity.getResources().getString(R.string.pnombre), mascota.getNombre());
+                intent.putExtra(activity.getResources().getString(R.string.plikesnumber), mascota.getNumber_like_bone());
                 activity.startActivity(intent);
                 // Elimino esta Activity para que no se vayan congelando y guardando en background ya
                 // que es como se comporta por defecto.  Una activity encima de la otra,ect.
@@ -64,10 +64,10 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
                 activity.finish();
             }
         });
-        contactoViewHolder.btn_Like_CV.setOnClickListener(new View.OnClickListener() {
+        mascotaViewHolder.img_bone_dog_CV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, "Diste Like a: " + contacto.getNombre(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "Diste Like a: " + mascota.getNombre(), Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -82,16 +82,18 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     public static class MascotaViewHolder extends RecyclerView.ViewHolder {
 
         private androidx.appcompat.widget.AppCompatImageView img_foto_CV;
-        private com.google.android.material.textview.MaterialTextView tv_nombre_CV;
-        private com.google.android.material.textview.MaterialTextView tv_telefono_CV;
-        private ImageButton btn_Like_CV;
+        private androidx.appcompat.widget.AppCompatImageButton img_bone_dog_CV;
+        private com.google.android.material.textview.MaterialTextView pet_nombre_CV;
+        private com.google.android.material.textview.MaterialTextView number_like_bone_CV;
+        private androidx.appcompat.widget.AppCompatImageButton img_bone_dog_color_CV;
 
         public MascotaViewHolder(@NonNull View itemView) {
             super(itemView);
             img_foto_CV = itemView.findViewById(R.id.img_foto_CV);
-            tv_nombre_CV = itemView.findViewById(R.id.tv_nombre_CV);
-            tv_telefono_CV = itemView.findViewById(R.id.tv_telefono_CV);
-            btn_Like_CV = itemView.findViewById(R.id.btn_like_CV);
+            img_bone_dog_CV = itemView.findViewById(R.id.img_bone_dog_CV);
+            pet_nombre_CV = itemView.findViewById(R.id.pet_nombre_CV);
+            number_like_bone_CV = itemView.findViewById(R.id.number_like_bone_CV);
+            img_bone_dog_color_CV = itemView.findViewById(R.id.img_bone_dog_color_CV);
         }
     }
 }

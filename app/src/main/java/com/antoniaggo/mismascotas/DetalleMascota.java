@@ -10,6 +10,6 @@ public class DetalleMascota extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detalle_mascota);
+        setContentView(R.layout.activity_mascotas_favoritas);
     }
 }

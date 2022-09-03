@@ -18,9 +18,14 @@
         android:layout_gravity="center"
         android:textSize="@dimen/tex_size"/>
     <ImageView
-        android:layout_width="@dimen/pet_iv_size"
+        android:layout_width="80sp"
         android:layout_height="match_parent"
         android:src="@drawable/icons8_cat_footprint_24"/>
+    <ImageView
+        android:layout_width="80sp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:src="@drawable/icons8_estrella_96"/>
 
 </androidx.appcompat.widget.Toolbar>
 

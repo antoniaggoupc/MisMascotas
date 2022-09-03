@@ -3,12 +3,12 @@ package com.antoniaggo.mismascotas;
 public class Mascota {
     private int foto;
     private String nombre;
-    private int likes_number;
+    private String number_like_bone;
 
-    public Mascota(int foto, String nombre, int number_like_bone) {
+    public Mascota(int foto, String nombre, String number_like_bone) {
         this.foto = foto;
         this.nombre = nombre;
-        this.likes_number = number_like_bone;
+        this.number_like_bone = number_like_bone;
     }
 
     public int getFoto() {
@@ -27,11 +27,11 @@ public class Mascota {
         this.nombre = nombre;
     }
 
-    public int getNumber_like_bone() {
-        return likes_number;
+    public String getNumber_like_bone() {
+        return number_like_bone;
     }
 
-    public void setNumber_like_bone(int number_like_bone) {
-        this.likes_number = number_like_bone;
+    public void setNumber_like_bone(String number_like_bone) {
+        this.number_like_bone = number_like_bone;
     }
 }

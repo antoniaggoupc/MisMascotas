@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">MisMascotas</string>
+    <string name="footfinger_content">footfinger</string>
+    <string name="star_content">star</string>
     <string name="nombre">Catty</string>
     <string name="search">Buscar</string>
     <string name="settings">Settings</string>
@@ -8,5 +10,6 @@
     <string name="pnombre">Pet</string>
     <string name="pfoto">Pet</string>
     <string name="plikesnumber">1</string>
+
 
 </resources>

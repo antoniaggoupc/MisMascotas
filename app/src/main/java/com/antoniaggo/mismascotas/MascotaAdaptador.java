@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -47,7 +46,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
                 // Para cambiar de pantalla de MainActivity a DetalleMascota
                 // al pulsar sobre un ítem de MainActivity
                 //
-                Intent intent = new Intent(activity, DetalleMascota.class);
+                Intent intent = new Intent(activity, MascotasFavoritas.class);
                 //
                 // Para enviar los datos de cada mascota a la Activity DetalleMascota
                 //

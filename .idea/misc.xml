@@ -8,6 +8,8 @@
         <entry key="app/src/main/res/layout/activity_cardview_mascota.xml" value="0.16666666666666666" />
         <entry key="app/src/main/res/layout/activity_detalle_mascota.xml" value="0.14010416666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_mascotas_favoritas.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_mascotas_favoritas2.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/detalle_mascota.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/listado_mascotas.xml" value="0.19610507246376813" />
       </map>

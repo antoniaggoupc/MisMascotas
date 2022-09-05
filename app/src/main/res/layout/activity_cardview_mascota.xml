@@ -3,7 +3,7 @@
     android:id="@+id/cvContacto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    android:layout_marginBottom="@dimen/activity_vertical_cardview_margin"
     app:cardCornerRadius="@dimen/corner_radius_cardview">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -21,7 +21,7 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/img_foto_CV"
             android:layout_width="match_parent"
-            android:layout_height="200sp"
+            android:layout_height="@dimen/activity_cardview_layout_height_image"
             android:src="@drawable/icons8_parrot_96"
             android:orientation="vertical"
             android:layout_gravity="center_horizontal"
@@ -30,50 +30,54 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/ll_cv_bottom"
             android:layout_width="match_parent"
-            android:layout_height="60sp"
+            android:layout_height="@dimen/activity_cardview_items_layout_barra"
             android:layout_marginHorizontal="10sp"
             android:layout_gravity="clip_horizontal"
             android:padding="@dimen/margen_arriba_layout">
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/img_bone_dog_CV"
                 android:layout_width="wrap_content"
-                android:layout_height="40sp"
-                android:layout_margin="10sp"
-               android:padding="5sp"
+                android:layout_height="@dimen/activity_cardview_items_layout_height"
+                android:layout_margin="@dimen/activity_cardview_items_layout_margin"
+               android:padding="@dimen/activity_cardview_items_padding"
                 android:src="@drawable/icons8_dog_bone_24"
-                />
+                android:clickable="true"
+                android:focusable="true" />
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/pet_nombre_CV"
-            android:layout_height="40sp"
+            android:layout_height="@dimen/activity_cardview_items_layout_height"
             android:layout_width="wrap_content"
-            android:layout_margin="10sp"
-            android:padding="5sp"
-            android:textSize="@dimen/nombre_pet_cardview"
+            android:layout_margin="@dimen/activity_cardview_items_layout_margin"
+            android:padding="@dimen/activity_cardview_items_padding"
+            android:textSize="@dimen/activity_cardview_text_size"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:text="@string/nombre" />
+            <!-- Espacio para que se separe
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/number_like_bone_CV"
+                android:id="@+id/space_CV"
                 android:layout_height="40sp"
                 android:layout_width="80sp"
                 android:layout_margin="10sp"
                 android:padding="5sp"
                 android:text="" />
+                -->
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/space_CV"
-            android:layout_height="40sp"
+            android:id="@+id/number_like_bone_CV"
+            android:layout_height="@dimen/activity_cardview_items_layout_height"
             android:layout_width="wrap_content"
-            android:layout_margin="10sp"
-            android:padding="5sp"
+            android:layout_margin="@dimen/activity_cardview_items_layout_margin"
+            android:padding="@dimen/activity_cardview_items_padding"
+            android:textSize="@dimen/activity_cardview_text_size"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:text="@string/likesnumber" />
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/img_bone_dog_color_CV"
-            android:layout_height="40sp"
-            android:layout_width="40sp"
-            android:layout_margin="10sp"
-            android:padding="5sp"
+            android:layout_height="@dimen/activity_cardview_items_layout_height"
+            android:layout_width="@dimen/activity_cardview_img_size"
+            android:layout_margin="@dimen/activity_cardview_items_layout_margin"
+            android:padding="@dimen/activity_cardview_items_padding"
             android:background="@drawable/icons8_dog_bone_96_color" />
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>

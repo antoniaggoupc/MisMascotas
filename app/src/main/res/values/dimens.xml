@@ -1,18 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="activity_horizontal_margin">16sp</dimen>
-    <dimen name="activity_vertical_margin">16sp</dimen>
+
+
+    <!-- action_view_layout.xml -->
+    <dimen name="text_size">10sp</dimen>
+    <dimen name="action_view_layout_width">80sp</dimen>
+    <dimen name="action_view_star_layout_marginRight">20sp</dimen>
+    <dimen name="action_view_star_layout_marginLeft">100sp</dimen>
+    <dimen name="action_view_footfinger_layout_marginRight">100sp</dimen>
+    <dimen name="action_view_footfinger_layout_marginLeft">20sp</dimen>
+
+    <!-- activity_main.xml y activity_card_view_mascota.xml -->
+    <dimen name="activity_vertical_cardview_margin">16sp</dimen>
+
+    <dimen name="corner_radius_cardview">4sp</dimen>
+    <dimen name="margen_arriba_layout">5sp</dimen>
+    <dimen name="activity_cardview_layout_height_image">200sp</dimen>
+    <dimen name="activity_cardview_items_layout_barra">70sp</dimen>
+    <dimen name="activity_cardview_items_layout_height">50sp</dimen>
+    <dimen name="activity_cardview_items_layout_margin">10sp</dimen>
+    <dimen name="activity_cardview_items_padding">5sp</dimen>
+    <dimen name="activity_cardview_text_size">30sp</dimen>
+    <dimen name="activity_cardview_img_size">50sp</dimen>
+
+
     <dimen name="nombre_mascota">33sp</dimen>
-    <dimen name="tex_size">20sp</dimen>
+
+
+
+
     <dimen name="top">20sp</dimen>
     <dimen name="left">10sp</dimen>
     <dimen name="corner_radius_textinputlayout_cardview">20sp</dimen>
-    <dimen name="corner_radius_cardview">4sp</dimen>
-    <dimen name="nombre_pet_cardview">20sp</dimen>
+
+
+
     <dimen name="pet_iv_size">40sp</dimen>
 
-    <dimen name="margen_arriba_layout">5sp</dimen>
+
     <dimen name="corner_radius">20dp</dimen>
 
     <dimen name="elevation_action_bar">4sp</dimen>
+
+
 </resources>

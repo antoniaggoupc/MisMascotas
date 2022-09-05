@@ -10,22 +10,37 @@
     android:background="@color/white"
     android:elevation="@dimen/elevation_action_bar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar">
-    <TextView
-        android:id="@+id/tvTelefono"
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imv_fingerprint"
+        android:layout_width="@dimen/action_view_layout_width"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/footfinger_content"
+        android:background="@null"
+        android:layout_marginEnd="@dimen/action_view_footfinger_layout_marginRight"
+        android:layout_marginStart="@dimen/action_view_footfinger_layout_marginLeft"
+        android:src="@drawable/icons8_cat_footprint_24"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:text="@string/app_name"
+        android:layout_marginStart="50sp"
         android:layout_gravity="center"
-        android:textSize="@dimen/tex_size"/>
-    <ImageView
-        android:layout_width="80sp"
-        android:layout_height="match_parent"
-        android:src="@drawable/icons8_cat_footprint_24"/>
-    <ImageView
-        android:layout_width="80sp"
+        android:textSize="@dimen/text_size"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imv_star"
+        android:layout_width="@dimen/action_view_layout_width"
         android:layout_height="match_parent"
         android:layout_gravity="end"
-        android:src="@drawable/icons8_estrella_96"/>
-
+        android:layout_marginEnd="@dimen/action_view_star_layout_marginRight"
+        android:layout_marginStart="@dimen/action_view_star_layout_marginLeft"
+        android:src="@drawable/icons8_estrella_96"
+        android:background="@null"
+        android:contentDescription="@string/star_content"
+        android:clickable="true"
+        android:focusable="true" />
 </androidx.appcompat.widget.Toolbar>
 

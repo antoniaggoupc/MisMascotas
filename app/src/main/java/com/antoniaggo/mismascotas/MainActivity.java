@@ -1,6 +1,8 @@
 package com.antoniaggo.mismascotas;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 
@@ -11,8 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
+    ArrayList<Mascota> mascotas = new ArrayList<>();
     private RecyclerView listaMascotas;
+    ImageView img_star;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +24,15 @@ public class MainActivity extends AppCompatActivity {
         // The Toolbar will not display the application title unless it is declared as an ActionBar.
 
         // assigning ID of the toolbar to a variable
-        // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         // using toolbar as ActionBar
         // Sets the Toolbar to act as the ActionBar for this Activity window.
         // Make sure the toolbar exists in the activity and is not null
-        //setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
+
+        img_star = findViewById(R.id.imv_star);
+        img_star.setOnClickListener(v -> onMascotasFavoritas());
 
         listaMascotas = findViewById(R.id.recyclerViewMascotas);
 
@@ -37,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
         inicializarListaMascotas();
         inicializarAdaptador();
 
+
     }
 
-    // Menu icons are inflated just as they were with actionbar
 
     public void inicializarListaMascotas(){
         mascotas.add(new Mascota(R.drawable.icons8_fish_96,"Fish", "1"));
@@ -54,6 +60,32 @@ public class MainActivity extends AppCompatActivity {
     public void inicializarAdaptador(){
         MascotaAdaptador adapter = new MascotaAdaptador(mascotas,this);
         listaMascotas.setAdapter(adapter);
+    }
+
+
+    public void onMascotasFavoritas()
+    {
+        //
+        // Para cambiar de pantalla de MainActivity a DetalleContacto
+        // al pulsar sobre un ítem de MainActivity
+        //
+        Intent intent = new Intent(MainActivity.this, MascotasFavoritas.class);
+        //
+        // Para enviar los datos de cada contacto a la Activity DetalleContacto
+        //
+           /* intent.putExtra(getResources().getString(R.string.pnombre), contactos.get(i).getNombre());
+            intent.putExtra(getResources().getString(R.string.ptelefono), contactos.get(i).getTelefono());
+            intent.putExtra(getResources().getString(R.string.pemail), contactos.get(i).getEmail());
+            */
+
+        startActivity(intent);
+        // Elimino esta Activity para que no se vayan congelando y guardando en background ya
+        // que es como se comporta por defecto.  Una activity encima de la otra,ect.
+        // Con esta forma de programar sólo tengo siempre una Activity ejecutándose
+        // y mi aplicación no se ralentiza a medida que el usuario la va usando
+        // ya que no se van superponiendo las activies una encima de la otra
+        //
+        finish();
     }
 
 

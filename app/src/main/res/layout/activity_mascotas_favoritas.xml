@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MascotasFavoritas">
 
-    <!-- Load the toolbar here
+    <!-- Load the toolbar here -->
     <include
         android:id="@+id/toolbar"
         layout="@layout/action_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></include>
-    -->
+        android:layout_height="wrap_content"/>
+
 
     <!-- Rest of content for the activity -->
-
-    <!--   android:layout_below="@+id/toolbar"-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMascotas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-      android:layout_centerHorizontal="true"
-      android:padding="@dimen/margen_arriba_layout" />
+        android:layout_centerHorizontal="true"
+        android:padding="@dimen/margen_arriba_layout" />
 
 </RelativeLayout>

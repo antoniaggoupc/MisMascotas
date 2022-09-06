@@ -6,7 +6,7 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    app:titleTextColor="@android:color/white"
+    app:titleTextColor="@android:color/black"
     android:background="@color/white"
     android:elevation="@dimen/elevation_action_bar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar">
@@ -16,7 +16,6 @@
         android:layout_height="match_parent"
         android:contentDescription="@string/footfinger_content"
         android:background="@null"
-        android:layout_marginEnd="@dimen/action_view_footfinger_layout_marginRight"
         android:layout_marginStart="@dimen/action_view_footfinger_layout_marginLeft"
         android:src="@drawable/icons8_cat_footprint_24"/>
 
@@ -24,12 +23,9 @@
         android:id="@+id/tv_app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:text="@string/app_name"
-        android:layout_marginStart="50sp"
         android:layout_gravity="center"
+        android:text="@string/app_name"
         android:textSize="@dimen/text_size"/>
-
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/imv_star"
         android:layout_width="@dimen/action_view_layout_width"
@@ -42,5 +38,6 @@
         android:contentDescription="@string/star_content"
         android:clickable="true"
         android:focusable="true" />
+
 </androidx.appcompat.widget.Toolbar>
 

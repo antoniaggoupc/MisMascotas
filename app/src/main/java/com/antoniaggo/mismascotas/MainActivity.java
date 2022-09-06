@@ -24,12 +24,12 @@ public class MainActivity extends AppCompatActivity {
         // The Toolbar will not display the application title unless it is declared as an ActionBar.
 
         // assigning ID of the toolbar to a variable
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //Toolbar toolbar = findViewById(R.id.toolbar);
 
         // using toolbar as ActionBar
         // Sets the Toolbar to act as the ActionBar for this Activity window.
         // Make sure the toolbar exists in the activity and is not null
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
 
         img_star = findViewById(R.id.imv_star);
         img_star.setOnClickListener(v -> onMascotasFavoritas());

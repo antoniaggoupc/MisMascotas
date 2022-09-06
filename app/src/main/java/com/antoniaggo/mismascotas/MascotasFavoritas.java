@@ -32,7 +32,10 @@ public class MascotasFavoritas extends AppCompatActivity {
 
         // Nos aseguramos de que la configuración que hemos aplicado en AndroidManifest.xml
         // a la activity activity_segundo.xml funcione correctamente
-       //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
     }
 
     // Crear un objeto de contactoAdaptador pasarle nuestra lista para que contactoAdaptador pueda hacer lo que tenemos definido

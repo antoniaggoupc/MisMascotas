@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -36,40 +39,30 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         // Setea la información
         mascotaViewHolder.img_foto_CV.setImageResource(mascota.getFoto());
         mascotaViewHolder.pet_nombre_CV.setText(mascota.getNombre());
-        mascotaViewHolder.number_like_bone_CV.setText(mascota.getNumber_like_bone());
+        mascotaViewHolder.likes_CV.setText(Integer.toString(mascota.getLikes()));;
 
-        mascotaViewHolder.img_foto_CV.setOnClickListener(new View.OnClickListener() {
+        mascotaViewHolder.btn_like_CV.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(activity, mascota.getNombre(), Toast.LENGTH_SHORT).show();
-                //
-                // Para cambiar de pantalla de MainActivity a DetalleMascota
-                // al pulsar sobre un ítem de MainActivity
-                //
-                Intent intent = new Intent(activity, MascotasFavoritas.class);
-                //
-                // Para enviar los datos de cada mascota a la Activity DetalleMascota
-                //
-                intent.putExtra(activity.getResources().getString(R.string.pfoto), mascota.getFoto());
-                intent.putExtra(activity.getResources().getString(R.string.pnombre), mascota.getNombre());
-                intent.putExtra(activity.getResources().getString(R.string.plikesnumber), mascota.getNumber_like_bone());
-                activity.startActivity(intent);
-                // Elimino esta Activity para que no se vayan congelando y guardando en background ya
-                // que es como se comporta por defecto.  Una activity encima de la otra,ect.
-                // Con esta forma de programar sólo tengo siempre una Activity ejecutándose
-                // y mi aplicación no se ralentiza a medida que el usuario la va usando
-                // ya que no se van superponiendo las activies una encima de la otra
-                //
-                activity.finish();
+            public void onClick(View view) {
+
+                String likes = mascotaViewHolder.likes_CV.getText().toString();
+                int numLikes = Integer.parseInt(likes);
+
+                if(!mascota.isButtonClicked()) {
+                    numLikes += 1;
+                    mascotaViewHolder.btn_like_CV.setBackground(view.getResources().getDrawable(R.drawable.icons8_dog_bone_96_color));
+                    mascota.setButtonClicked(true);
+                } else {
+                    numLikes -= 1;
+                    mascotaViewHolder.btn_like_CV.setBackground(view.getResources().getDrawable(R.drawable.icons8_dog_bone_24));
+                    mascota.setButtonClicked(false);
+                }
+
+                mascotaViewHolder.likes_CV.setText(Integer.toString(numLikes));
+
             }
         });
-        mascotaViewHolder.img_bone_dog_CV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(activity, "Diste Like a: " + mascota.getNombre(), Toast.LENGTH_SHORT).show();
-            }
 
-        });
     }
 
     // Devuelve la cantidad de elementos que contiene la lista
@@ -81,18 +74,16 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     public static class MascotaViewHolder extends RecyclerView.ViewHolder {
 
         private androidx.appcompat.widget.AppCompatImageView img_foto_CV;
-        private androidx.appcompat.widget.AppCompatImageButton img_bone_dog_CV;
-        private com.google.android.material.textview.MaterialTextView pet_nombre_CV;
-        private com.google.android.material.textview.MaterialTextView number_like_bone_CV;
-        private androidx.appcompat.widget.AppCompatImageButton img_bone_dog_color_CV;
+        private TextView pet_nombre_CV;
+        private TextView likes_CV;
+        private androidx.appcompat.widget.AppCompatImageView btn_like_CV;
 
         public MascotaViewHolder(@NonNull View itemView) {
             super(itemView);
             img_foto_CV = itemView.findViewById(R.id.img_foto_CV);
-            img_bone_dog_CV = itemView.findViewById(R.id.img_bone_dog_CV);
+            btn_like_CV = itemView.findViewById(R.id.btn_like_CV);
             pet_nombre_CV = itemView.findViewById(R.id.pet_nombre_CV);
-            number_like_bone_CV = itemView.findViewById(R.id.number_like_bone_CV);
-            img_bone_dog_color_CV = itemView.findViewById(R.id.img_bone_dog_color_CV);
+            likes_CV = itemView.findViewById(R.id.likes_CV);
         }
     }
 }

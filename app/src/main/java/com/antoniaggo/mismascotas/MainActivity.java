@@ -2,7 +2,9 @@ package com.antoniaggo.mismascotas;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+
 
 import java.util.ArrayList;
 
@@ -13,9 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Mascota> mascotas = new ArrayList<>();
+    private ArrayList<Mascota> mascotas = new ArrayList<>();
     private RecyclerView listaMascotas;
-    ImageView img_star;
+    private ImageView img_star;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,17 +26,14 @@ public class MainActivity extends AppCompatActivity {
         // The Toolbar will not display the application title unless it is declared as an ActionBar.
 
         // assigning ID of the toolbar to a variable
-        //Toolbar toolbar = findViewById(R.id.toolbar);
-
+        Toolbar toolbar = findViewById(R.id.toolbar);
         // using toolbar as ActionBar
         // Sets the Toolbar to act as the ActionBar for this Activity window.
         // Make sure the toolbar exists in the activity and is not null
-        //setSupportActionBar(toolbar);
-
-        img_star = findViewById(R.id.imv_star);
-        img_star.setOnClickListener(v -> onMascotasFavoritas());
+        setSupportActionBar(toolbar);
 
         listaMascotas = findViewById(R.id.recyclerViewMascotas);
+
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
@@ -43,16 +42,29 @@ public class MainActivity extends AppCompatActivity {
         inicializarListaMascotas();
         inicializarAdaptador();
 
+        img_star = findViewById(R.id.imv_star);
+        img_star.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onMascotasFavoritas();
+            }
+        });
+
 
     }
 
 
     public void inicializarListaMascotas(){
-        mascotas.add(new Mascota(R.drawable.icons8_fish_96,"Fish", "1"));
-        mascotas.add(new Mascota(R.drawable.icons8_hamster_96,"Hamster", "2"));
-        mascotas.add(new Mascota(R.drawable.icons8_kissing_cat_48,"Catty", "3"));
-        mascotas.add(new Mascota(R.drawable.icons8_parrot_96,"Parrot", "4"));
-        mascotas.add(new Mascota(R.drawable.icons8_squirrel_96,"Squirrel", "5"));
+        mascotas.add(new Mascota(R.drawable.icons8_fish_96,"Fish",20));
+        mascotas.add(new Mascota(R.drawable.icons8_hamster_96,"Hamster", 10));
+        mascotas.add(new Mascota(R.drawable.icons8_kissing_cat_48,"Catty", 7));
+        mascotas.add(new Mascota(R.drawable.icons8_parrot_96,"Parrot", 5));
+        mascotas.add(new Mascota(R.drawable.icons8_squirrel_96,"Squirrel", 4));
+        mascotas.add(new Mascota(R.drawable.icons8_fish_96,"Fish_2",2));
+        mascotas.add(new Mascota(R.drawable.icons8_hamster_96,"Hamster_2", 7));
+        mascotas.add(new Mascota(R.drawable.icons8_kissing_cat_48,"Catty_2", 3));
+        mascotas.add(new Mascota(R.drawable.icons8_parrot_96,"Parrot_2", 25));
+        mascotas.add(new Mascota(R.drawable.icons8_squirrel_96,"Squirrel_2", 12));
 
     }
 
@@ -85,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         // y mi aplicación no se ralentiza a medida que el usuario la va usando
         // ya que no se van superponiendo las activies una encima de la otra
         //
-        finish();
+        //finish();
     }
 
 

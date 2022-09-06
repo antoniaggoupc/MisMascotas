@@ -8,6 +8,7 @@
     <dimen name="action_view_star_layout_marginRight">10sp</dimen>
     <dimen name="action_view_star_layout_marginLeft">10sp</dimen>
     <dimen name="action_view_footfinger_layout_marginLeft">10sp</dimen>
+    <dimen name="marginToolbar">15sp</dimen>
 
 
     <!-- activity_main.xml y activity_card_view_mascota.xml -->

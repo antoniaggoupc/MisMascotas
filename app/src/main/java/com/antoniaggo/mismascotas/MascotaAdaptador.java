@@ -41,6 +41,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         mascotaViewHolder.pet_nombre_CV.setText(mascota.getNombre());
         mascotaViewHolder.likes_CV.setText(Integer.toString(mascota.getLikes()));;
 
+        // TODO better visual aspect
         mascotaViewHolder.btn_like_CV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -15,5 +15,5 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-    <!-- Theme (style SIN ActionBar)  -->
+
 </resources>

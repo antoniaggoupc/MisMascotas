@@ -2,12 +2,14 @@ package com.antoniaggo.mismascotas;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -30,7 +32,9 @@ public class MainActivity extends AppCompatActivity {
         // using toolbar as ActionBar
         // Sets the Toolbar to act as the ActionBar for this Activity window.
         // Make sure the toolbar exists in the activity and is not null
+
         setSupportActionBar(toolbar);
+
 
         listaMascotas = findViewById(R.id.recyclerViewMascotas);
 
@@ -43,14 +47,33 @@ public class MainActivity extends AppCompatActivity {
         inicializarAdaptador();
 
         img_star = findViewById(R.id.imv_star);
-        img_star.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onMascotasFavoritas();
-            }
-        });
+        img_star.setOnClickListener(view -> onMascotasFavoritas());
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(@NonNull Menu menu){
+        getMenuInflater().inflate(R.menu.menu_opciones, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        Intent intent;
+        switch (item.getItemId()){
+            case R.id.mContact:
+                intent = new Intent(this, Formulario_Activity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.mAbout:
+                intent = new Intent(this, AboutActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

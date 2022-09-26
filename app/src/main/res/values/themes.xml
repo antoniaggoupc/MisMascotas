@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MisMascotas" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.MisMascotas" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
 
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
@@ -14,6 +14,18 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
-![](../../../../../../../../Library/Group Containers/group.com.apple.notes/Media/EC655627-C4A1-42F7-9251-2B975BC43B66/Captura de Pantalla 2022-09-06 a las 12.16.08.png)
+    <!-- Style for FormularioActivity - mensaje. -->
+    <style name="Rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+    <!-- Style for FormularioAbout -->
+    <style name="Cut" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">12dp</item>
+    </style>
 </resources>

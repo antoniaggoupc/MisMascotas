@@ -10,7 +10,7 @@
     <!-- Load the toolbar here -->
     <include
         android:id="@+id/toolbar"
-        layout="@layout/action_view"/>
+        layout="@layout/action_view" />
 
     <!-- Rest of content for the activity -->
     <androidx.recyclerview.widget.RecyclerView

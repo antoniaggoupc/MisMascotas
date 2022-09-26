@@ -9,5 +9,14 @@
     <string name="pfoto">Pet</string>
     <string name="plikesnumber">1</string>
 
+    <string name="menu_contact">Contacto</string>
+    <string name="menu_about">Acerca de</string>
+    <string name="name_hint">Nombre Completo</string>
+    <string name="email_hint">Email</string>
+    <string name="mensaje_hint">Escribe aquí tu mensaje</string>
+    <string name="button_enviar">Enviar Comentario</string>
+    <string name="tvTitleAbout">About us</string>
+    <string name="textAbout">On this app you will find my work about Menus and Fragments. This is the About section that introduces myself.</string>
+
 
 </resources>

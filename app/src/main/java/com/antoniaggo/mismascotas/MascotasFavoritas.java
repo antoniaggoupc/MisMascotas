@@ -3,6 +3,9 @@ package com.antoniaggo.mismascotas;
 
 import android.os.Bundle;
 
+import com.antoniaggo.mismascotas.adapter.MascotaAdaptador;
+import com.antoniaggo.mismascotas.pojo.Mascota;
+
 import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,8 +48,8 @@ public class MascotasFavoritas extends AppCompatActivity {
 
 
     public void inicializarListaMascotas(){
-        mascotas.add(new Mascota(R.drawable.icons8_fish_96,"Fish",20));
-        mascotas.add(new Mascota(R.drawable.icons8_hamster_96,"Hamster", 10));
+        mascotas.add(new Mascota(R.drawable.icons8_fish_96,"Fish",2));
+        mascotas.add(new Mascota(R.drawable.icons8_hamster_96,"Hamster", 1));
         mascotas.add(new Mascota(R.drawable.icons8_kissing_cat_48,"Catty", 7));
         mascotas.add(new Mascota(R.drawable.icons8_parrot_96,"Parrot", 5));
         mascotas.add(new Mascota(R.drawable.icons8_squirrel_96,"Squirrel", 4));

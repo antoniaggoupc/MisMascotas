@@ -34,9 +34,14 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'com.android.support.constraint:constraint-layout:2.1.4'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-   // implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.sun.mail:android-mail:1.6.2'
     implementation 'com.sun.mail:android-activation:1.6.2'
+
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    // For control over item selection of both touch and mouse driven selection
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
+    // Library to make a circular ImageView
+    implementation 'com.mikhaellopez:circularimageview:4.3.1'
 }

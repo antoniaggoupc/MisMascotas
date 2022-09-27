@@ -6,18 +6,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
-
-<<<<<<< HEAD
-import com.antoniaggo.mismascotas.adapter.MascotaAdaptador;
-import com.antoniaggo.mismascotas.pojo.Mascota;
-=======
 import com.antoniaggo.mismascotas.adapter.PageAdapter;
 import com.antoniaggo.mismascotas.fragment.ProfileFragment;
 import com.antoniaggo.mismascotas.fragment.RecyclerViewFragment;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
->>>>>>> homework-week-4
 
 import java.util.ArrayList;
 

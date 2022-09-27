@@ -17,6 +17,8 @@
     <string name="button_enviar">Enviar Comentario</string>
     <string name="tvTitleAbout">About us</string>
     <string name="textAbout">On this app you will find my work about Menus and Fragments. This is the About section that introduces myself.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

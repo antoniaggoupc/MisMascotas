@@ -1,10 +1,13 @@
-package com.antoniaggo.mismascotas;
+package com.antoniaggo.mismascotas.adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.antoniaggo.mismascotas.pojo.Mascota;
+import com.antoniaggo.mismascotas.R;
 
 import java.util.ArrayList;
 

@@ -3,6 +3,9 @@ package com.antoniaggo.mismascotas;
 
 import android.os.Bundle;
 
+import com.antoniaggo.mismascotas.adapter.MascotaAdaptador;
+import com.antoniaggo.mismascotas.pojo.Mascota;
+
 import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;

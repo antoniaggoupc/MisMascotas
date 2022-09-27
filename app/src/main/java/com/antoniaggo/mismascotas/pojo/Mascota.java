@@ -1,4 +1,4 @@
-package com.antoniaggo.mismascotas;
+package com.antoniaggo.mismascotas.pojo;
 
 public class Mascota {
     private int foto;

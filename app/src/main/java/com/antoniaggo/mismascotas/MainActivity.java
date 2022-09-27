@@ -7,6 +7,9 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 
 
+import com.antoniaggo.mismascotas.adapter.MascotaAdaptador;
+import com.antoniaggo.mismascotas.pojo.Mascota;
+
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;

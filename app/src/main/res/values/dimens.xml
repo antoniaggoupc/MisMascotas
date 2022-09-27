@@ -17,13 +17,13 @@
 
     <dimen name="corner_radius_cardview">4sp</dimen>
     <dimen name="margen_arriba_layout">5sp</dimen>
-    <dimen name="activity_cardview_layout_height_image">200sp</dimen>
-    <dimen name="activity_cardview_items_layout_barra">70sp</dimen>
+    <dimen name="activity_cardview_layout_height_image">100sp</dimen>
+    <dimen name="activity_cardview_items_layout_barra">50sp</dimen>
     <dimen name="activity_cardview_items_layout_height">50sp</dimen>
     <dimen name="activity_cardview_items_layout_margin">10sp</dimen>
     <dimen name="activity_cardview_items_padding">5sp</dimen>
-    <dimen name="activity_cardview_text_size">30sp</dimen>
-    <dimen name="activity_cardview_img_size">50sp</dimen>
+    <dimen name="activity_cardview_text_size">10sp</dimen>
+    <dimen name="activity_cardview_img_size">30sp</dimen>
 
 
     <dimen name="elevation_action_bar">4sp</dimen>

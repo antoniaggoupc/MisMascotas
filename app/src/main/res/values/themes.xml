@@ -17,6 +17,7 @@
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:textColor">#ff000f</item>
     </style>
     <!-- Style for FormularioActivity - mensaje. -->
     <style name="Rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
@@ -28,4 +29,5 @@
         <item name="cornerFamily">cut</item>
         <item name="cornerSize">12dp</item>
     </style>
+
 </resources>

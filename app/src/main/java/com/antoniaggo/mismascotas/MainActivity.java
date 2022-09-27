@@ -7,50 +7,64 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 
 
+<<<<<<< HEAD
 import com.antoniaggo.mismascotas.adapter.MascotaAdaptador;
 import com.antoniaggo.mismascotas.pojo.Mascota;
+=======
+import com.antoniaggo.mismascotas.adapter.PageAdapter;
+import com.antoniaggo.mismascotas.fragment.ProfileFragment;
+import com.antoniaggo.mismascotas.fragment.RecyclerViewFragment;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+>>>>>>> homework-week-4
 
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Mascota> mascotas = new ArrayList<>();
-    private RecyclerView listaMascotas;
     private ImageView img_star;
+
+    private Toolbar toolbar;
+
+    private TabLayout tabLayout;
+    private ViewPager2 viewPager2;
+    PageAdapter adapter;
+
+    // private RecyclerView.Adapter pageAdapter;
+    private AppBarLayout appBarLayout;
+
+    // The Toolbar will not display the application title unless it is declared as an ActionBar.
+// assigning ID of the toolbar to a variable
+// Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+    // using toolbar as ActionBar
+// Sets the Toolbar to act as the ActionBar for this Activity window.
+// Make sure the toolbar exists in the activity and is not null
+// setSupportActionBar(toolbar);
+
+    // using toolbar as ActionBar
+// Sets the Toolbar to act as the ActionBar for this Activity window.
+// Make sure the toolbar exists in the activity and is not null
+// setSupportActionBar(toolbar);
+
+    ArrayList<Fragment> fragments = agregarFragments();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // The Toolbar will not display the application title unless it is declared as an ActionBar.
 
-        // assigning ID of the toolbar to a variable
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        // using toolbar as ActionBar
-        // Sets the Toolbar to act as the ActionBar for this Activity window.
-        // Make sure the toolbar exists in the activity and is not null
-
-        setSupportActionBar(toolbar);
-
-
-        listaMascotas = findViewById(R.id.recyclerViewMascotas);
-
-
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        listaMascotas.setLayoutManager(llm);
-
-        inicializarListaMascotas();
-        inicializarAdaptador();
-
-        img_star = findViewById(R.id.imv_star);
-        img_star.setOnClickListener(view -> onMascotasFavoritas());
+        fragments = agregarFragments();
+        setupToolbar();
+        setupViewPager();
+        setupTabLayout();
 
 
     }
@@ -79,28 +93,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    public void inicializarListaMascotas(){
-        mascotas.add(new Mascota(R.drawable.icons8_fish_96,"Fish",20));
-        mascotas.add(new Mascota(R.drawable.icons8_hamster_96,"Hamster", 10));
-        mascotas.add(new Mascota(R.drawable.icons8_kissing_cat_48,"Catty", 7));
-        mascotas.add(new Mascota(R.drawable.icons8_parrot_96,"Parrot", 5));
-        mascotas.add(new Mascota(R.drawable.icons8_squirrel_96,"Squirrel", 4));
-        mascotas.add(new Mascota(R.drawable.icons8_fish_96,"Fish_2",2));
-        mascotas.add(new Mascota(R.drawable.icons8_hamster_96,"Hamster_2", 7));
-        mascotas.add(new Mascota(R.drawable.icons8_kissing_cat_48,"Catty_2", 3));
-        mascotas.add(new Mascota(R.drawable.icons8_parrot_96,"Parrot_2", 25));
-        mascotas.add(new Mascota(R.drawable.icons8_squirrel_96,"Squirrel_2", 12));
-
-    }
-
-    // Crear un objeto de contactoAdaptador pasarle nuestra lista para que contactoAdaptador pueda hacer lo que tenemos definido
-    public void inicializarAdaptador(){
-        MascotaAdaptador adapter = new MascotaAdaptador(mascotas,this);
-        listaMascotas.setAdapter(adapter);
-    }
-
-
     public void onMascotasFavoritas()
     {
         //
@@ -124,6 +116,48 @@ public class MainActivity extends AppCompatActivity {
         // ya que no se van superponiendo las activies una encima de la otra
         //
         //finish();
+    }
+
+    private ArrayList<Fragment> agregarFragments(){
+        fragments = new ArrayList<>();
+
+        fragments.add(new RecyclerViewFragment());
+        fragments.add(new ProfileFragment());
+        return fragments;
+    }
+
+    private void setupToolbar() {
+        toolbar = findViewById(R.id.fragment_toolbar);
+        // Realizamos una validación
+        if(toolbar != null){
+            setSupportActionBar(toolbar);
+        }
+
+        img_star = findViewById(R.id.imv_star);
+        img_star.setOnClickListener(view -> onMascotasFavoritas());
+
+    }
+
+    private void setupViewPager() {
+        viewPager2 = findViewById(R.id.viewPager2);
+        adapter = new PageAdapter(getSupportFragmentManager(), getLifecycle(), fragments);
+        viewPager2.setAdapter(adapter);
+
+    }
+
+    /*
+    La integración entre TabLayout y ViewPager2
+    es realizada por la clase TabLayoutMediator.
+    Su cometido consiste en sincronizar los cambios en ambos elementos.
+     */
+    private void setupTabLayout() {
+        tabLayout = findViewById(R.id.tabLayout);
+        new TabLayoutMediator(tabLayout, viewPager2,
+                (tab, position) -> {
+                    tab.setIcon(PageAdapter.Tab.byPosition(position).icon);
+                   // tab.setText(PageAdapter.Tab.byPosition(position).title);
+                })
+                .attach();
     }
 
 
